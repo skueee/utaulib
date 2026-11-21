@@ -1,13 +1,13 @@
-use std::path::{Path, PathBuf};
-use std::io;
-use std::fs;
 use encoding_rs::SHIFT_JIS;
+use std::fs;
+use std::io;
+use std::path::{Path, PathBuf};
 
-use crate::structs::voicebank::{Character,Voicebank};
+use crate::structs::voicebank::{Character, Voicebank};
 use crate::voicebank::parser;
 
 pub struct Renderer {
-     pub voicebank: Voicebank
+    pub voicebank: Voicebank,
 }
 
 impl Renderer {
@@ -20,8 +20,8 @@ impl Renderer {
 
         let character: Character = parser::parse_character(&character_file);
 
-        let voicebank = Voicebank {character};
+        let voicebank = Voicebank { character };
 
-        Ok(Renderer {voicebank})
+        Ok(Renderer { voicebank })
     }
 }

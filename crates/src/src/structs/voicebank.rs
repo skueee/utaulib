@@ -1,5 +1,5 @@
 pub struct Voicebank {
-    pub character: Character
+    pub character: Character,
 }
 
 #[derive(Debug)]
