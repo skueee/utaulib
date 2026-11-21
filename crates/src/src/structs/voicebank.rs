@@ -1,3 +1,7 @@
+pub struct Voicebank {
+    pub character: Character
+}
+
 #[derive(Debug)]
 pub struct Character {
     pub name: Option<String>,

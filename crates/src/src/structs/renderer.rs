@@ -3,11 +3,11 @@ use std::io;
 use std::fs;
 use encoding_rs::SHIFT_JIS;
 
-use crate::structs::voicebank::Character;
+use crate::structs::voicebank::{Character,Voicebank};
 use crate::voicebank::parser;
 
 pub struct Renderer {
-     pub character: Character
+     pub voicebank: Voicebank
 }
 
 impl Renderer {
@@ -18,8 +18,10 @@ impl Renderer {
         let (cow, _, _) = SHIFT_JIS.decode(&bytes);
         let character_file: String = cow.into_owned();
 
-        let character = parser::parse_character(&character_file);
+        let character: Character = parser::parse_character(&character_file);
 
-        Ok(Renderer {character})
+        let voicebank = Voicebank {character};
+
+        Ok(Renderer {voicebank})
     }
 }
