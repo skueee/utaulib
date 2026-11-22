@@ -19,6 +19,7 @@ pub struct Voice {
     pub suffix: String,
     pub color: String,
     pub range: String,
+    pub path: String,
     pub data: VoiceData,
 }
 
