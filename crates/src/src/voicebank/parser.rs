@@ -71,7 +71,7 @@ pub fn parse_voices_from_character(content_str: &String) -> Vec<Voice> {
                 suffix: suffix.to_string(),
                 color: color.to_string(),
                 range: range.to_string(),
-                path: "",
+                otos: Vec::new(),
                 data: VoiceData::Unloaded,
             });
         }

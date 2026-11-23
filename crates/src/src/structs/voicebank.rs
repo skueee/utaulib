@@ -1,5 +1,9 @@
+use std::path::PathBuf;
+
 pub struct Voicebank {
-    pub character: Character
+    pub path: PathBuf,
+    pub character: Character,
+    pub subbanks: Vec<Subbank>
 }
 
 #[derive(Debug)]
@@ -19,8 +23,12 @@ pub struct Voice {
     pub suffix: String,
     pub color: String,
     pub range: String,
-    pub path: String,
+    pub otos: Vec<Oto>,
     pub data: VoiceData,
+}
+
+pub struct Oto {
+    pub path: PathBuf,
 }
 
 pub enum VoiceData {
